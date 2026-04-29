@@ -1,12 +1,12 @@
 # Sistema de Gestión de Actividades y Tareas Diarias
 
-Este es el proyecto final para la materia de Desarrollo Basado en Modelos. Consiste en una aplicación web tipo cliente-servidor que permite registrar, editar, organizar y eliminar tareas con sus respectivas prioridades y fechas de entrega.
+Este es el proyecto para la materia de Desarrollo Basado en Modelos. Consiste en una aplicación web tipo cliente-servidor que permite registrar, editar, organizar y eliminar tareas con sus respectivas prioridades y fechas de entrega.
 
-La interfaz de usuario está construida con HTML, CSS y JavaScript puro. El servidor está desarrollado en Java usando Spring Boot y la información se almacena en una base de datos MySQL desplegada mediante contenedor Docker.
+La interfaz de usuario está construida con HTML, CSS y JavaScript. El servidor está desarrollado en Java usando Spring Boot y la información se almacena en una base de datos MySQL desplegada mediante contenedor Docker.
 
 ## Requisitos de instalación
 
-Para ejecutar este proyecto en tu computadora, necesitas tener instalado lo siguiente:
+Para ejecutar este proyecto, necesitas tener instalado lo siguiente:
 
 - JDK versión 17 o superior.
 - Docker Engine/Docker Desktop.
