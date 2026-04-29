@@ -10,6 +10,7 @@ Para ejecutar este proyecto en tu computadora, necesitas tener instalado lo sigu
 
 - JDK versión 17 o superior.
 - Docker Engine/Docker Desktop.
+- MySQL Workbench (para administrar y visualizar la base de datos).
 
 ## Instrucciones de ejecución
 
@@ -22,7 +23,19 @@ docker-compose up -d
 ```
 El contenedor tiene que inicializarse correctamente en el puerto 3306.
 
-### 2. Iniciar el servidor backend
+### 2. Configurar la conexión en MySQL Workbench
+
+1. Abre **MySQL Workbench** y haz clic en el ícono de **+** junto a *MySQL Connections*.
+2. Configura la nueva conexión con los siguientes datos:
+   - **Connection Name:** SGATD_DB (o el nombre que prefieras)
+   - **Hostname:** `localhost`
+   - **Port:** `3306`
+   - **Username:** `root`
+3. Haz clic en **Store in Vault...** e ingresa la contraseña: `root`.
+4. Presiona **Test Connection** para verificar que se conecte correctamente al contenedor y luego haz clic en **OK**.
+5. Al abrir la conexión, podrás ver la base de datos `sgatd_db` a la izquierda. Nota: Las tablas serán creadas automáticamente por el servidor backend cuando lo inicies.
+
+### 3. Iniciar el servidor backend
 
 En otra terminal, dentro de la carpeta principal del proyecto, ingresa a la carpeta del backend:
 
@@ -39,6 +52,6 @@ O si usas Linux o Git Bash:
 ```
 El servidor estará listo cuando la consola indique que Tomcat ha iniciado en el puerto 8080.
 
-### 3. Usar la herramienta
+### 4. Usar la herramienta
 
 Con la base de datos y el servidor corriendo, regresa a la carpeta principal del proyecto y abre el archivo `index.html`.
