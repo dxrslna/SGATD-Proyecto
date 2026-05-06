@@ -52,6 +52,24 @@ O si usas Linux o Git Bash:
 ```
 El servidor estará listo cuando la consola indique que Tomcat ha iniciado en el puerto 8080.
 
-### 4. Usar la herramienta
+### 4. Despliegue del Frontend (Apache / XAMPP)
 
-Con la base de datos y el servidor corriendo, regresa a la carpeta principal del proyecto y abre el archivo `index.html`.
+> **⚠️ IMPORTANTE:** Aunque el frontend se sirva a través de Apache, **es obligatorio** tener la base de datos (Paso 1) y el servidor backend (Paso 3) ejecutándose en sus respectivas terminales para que el sistema pueda guardar y mostrar las tareas.
+
+El frontend de la aplicación (HTML, CSS y JS) puede ser ejecutado directamente abriendo `index.html`, o mejor aún, servido mediante un servidor web como **Apache** (usando **XAMPP**).
+
+#### Opción A: Usar script automático para XAMPP (Recomendado)
+1. Ejecuta el archivo `deploy-xampp.bat` haciendo doble clic sobre él en tu explorador de archivos.
+2. Este script creará automáticamente una carpeta llamada `sgatd` en el directorio de XAMPP (`C:\xampp\htdocs\sgatd`) y copiará los archivos del frontend.
+3. Abre el **Panel de Control de XAMPP** e inicia el servicio de **Apache**. *(Nota: No necesitas iniciar MySQL ni Tomcat en XAMPP, ya que usas Docker y Spring Boot para la base de datos y el backend).*
+4. Ingresa a [http://localhost/sgatd](http://localhost/sgatd) en tu navegador web.
+
+#### Opción B: Copia manual a XAMPP
+1. Abre tu explorador de archivos y ve a la carpeta de instalación de XAMPP (usualmente `C:\xampp\htdocs`).
+2. Crea una nueva carpeta llamada `sgatd`.
+3. Copia los archivos `index.html`, `script.js` y `style.css` de este proyecto dentro de la nueva carpeta `C:\xampp\htdocs\sgatd`.
+4. Abre el **Panel de Control de XAMPP** e inicia el servicio de **Apache**.
+5. Abre tu navegador y dirígete a [http://localhost/sgatd](http://localhost/sgatd).
+
+#### Opción C: Ejecución local sin servidor web
+Con la base de datos y el servidor backend corriendo, simplemente regresa a la carpeta principal del proyecto y abre el archivo `index.html` haciendo doble clic.
