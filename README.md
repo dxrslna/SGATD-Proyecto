@@ -1,16 +1,11 @@
 # Sistema de Gestión de Actividades y Tareas Diarias
 
-Este es el proyecto para la materia de Desarrollo Basado en Modelos. Consiste en una aplicación web tipo cliente-servidor que permite registrar, editar, organizar y eliminar tareas con sus respectivas prioridades y fechas de entrega.
-
-La interfaz de usuario está construida con HTML, CSS y JavaScript. El servidor está desarrollado en Java usando Spring Boot y la información se almacena en una base de datos MySQL desplegada mediante contenedor Docker.
-
 ## Requisitos de instalación
 
-Para ejecutar este proyecto, necesitas tener instalado lo siguiente:
-
-- JDK versión 17 o superior.
-- Docker Engine/Docker Desktop.
-- MySQL Workbench (para administrar y visualizar la base de datos).
+- JDK versión 17 o superior
+- Docker Engine/Docker Desktop
+- MySQL Workbench
+- XAMPP
 
 ## Instrucciones de ejecución
 
@@ -54,22 +49,19 @@ El servidor estará listo cuando la consola indique que Tomcat ha iniciado en el
 
 ### 4. Despliegue del Frontend (Apache / XAMPP)
 
-> **⚠️ IMPORTANTE:** Aunque el frontend se sirva a través de Apache, **es obligatorio** tener la base de datos (Paso 1) y el servidor backend (Paso 3) ejecutándose en sus respectivas terminales para que el sistema pueda guardar y mostrar las tareas.
+> Aunque el frontend se sirva a través de Apache, es necesario tener la base de datos y el servidor backend ejecutándose en sus respectivas terminales para que el sistema pueda guardar y mostrar las tareas.
 
-El frontend de la aplicación (HTML, CSS y JS) puede ser ejecutado directamente abriendo `index.html`, o mejor aún, servido mediante un servidor web como **Apache** (usando **XAMPP**).
 
-#### Opción A: Usar script automático para XAMPP (Recomendado)
-1. Ejecuta el archivo `deploy-xampp.bat` haciendo doble clic sobre él en tu explorador de archivos.
+#### Usar script automático
+1. Ejecuta el archivo `deploy-xampp.bat`
 2. Este script creará automáticamente una carpeta llamada `sgatd` en el directorio de XAMPP (`C:\xampp\htdocs\sgatd`) y copiará los archivos del frontend.
-3. Abre el **Panel de Control de XAMPP** e inicia el servicio de **Apache**. *(Nota: No necesitas iniciar MySQL ni Tomcat en XAMPP, ya que usas Docker y Spring Boot para la base de datos y el backend).*
-4. Ingresa a [http://localhost/sgatd](http://localhost/sgatd) en tu navegador web.
+3. Abre XAMPP e inicia el servicio de Apache solamente.
+4. Ingresa a [http://localhost/sgatd](http://localhost/sgatd).
 
-#### Opción B: Copia manual a XAMPP
-1. Abre tu explorador de archivos y ve a la carpeta de instalación de XAMPP (usualmente `C:\xampp\htdocs`).
+#### En caso de que no funcione el script:
+1. Abre tu explorador de archivos y ve a la carpeta de instalación de XAMPP
 2. Crea una nueva carpeta llamada `sgatd`.
-3. Copia los archivos `index.html`, `script.js` y `style.css` de este proyecto dentro de la nueva carpeta `C:\xampp\htdocs\sgatd`.
-4. Abre el **Panel de Control de XAMPP** e inicia el servicio de **Apache**.
+3. Copia los archivos `index.html`, `script.js` y `style.css` de este proyecto dentro de la carpeta `C:\xampp\htdocs\sgatd`.
+4. Abre XAMPP e inicia el servicio de Apache
 5. Abre tu navegador y dirígete a [http://localhost/sgatd](http://localhost/sgatd).
 
-#### Opción C: Ejecución local sin servidor web
-Con la base de datos y el servidor backend corriendo, simplemente regresa a la carpeta principal del proyecto y abre el archivo `index.html` haciendo doble clic.
